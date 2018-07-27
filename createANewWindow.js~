@@ -1,0 +1,35 @@
+function openWindowTab() {
+    var htmlElem = window.document.documentElement;
+    htmlElem.setAttribute("style", "padding: 3px");
+    
+    createNewWindowInHtmlElem(htmlElem);
+    createNewWindowInHtmlElem(htmlElem);
+    createNewWindowInHtmlElem(htmlElem);
+    createNewWindowInHtmlElem(htmlElem);
+    createNewWindowInHtmlElem(htmlElem);
+
+    _webmgr_lineup(htmlElem);
+}
+
+function _webmgr_lineup(host) {
+    for(child in host.childNodes) {
+	child.setAttribute("style", "float:right; display:block;");
+    }
+}
+
+function createNewWindowInHtmlElem(elem) {
+    var divElem = document.createElement("DIV");
+    var parElem = document.createElement("P");
+
+    parElem.textContent = "Hello World!";
+    parElem.setAttribute("style", "color: rgb(69, 186, 203)");
+    divElem.scrollHeight = "233px";
+    divElem.scrollWidth  = "377px";
+    divElem.setAttribute("style", "margin: 3px; width: 377px; height: 377px; background-color: rgb(84,156,206); display: block");
+    //divElem.appendChild(parElem);
+    elem.appendChild(divElem);
+
+    document.write();
+}
+
+openWindowTab();

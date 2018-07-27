@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Create a New Window</title>
+  </head>
+  
+  <body>
+    <script src="createANewWindow.js"></script>
+  </body>
+</html>
