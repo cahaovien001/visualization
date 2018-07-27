@@ -15,8 +15,8 @@ public class VisualizeImageToCharacterSet {
 	    int maxX = bufferedImage.getWidth();
 	    int maxY = bufferedImage.getHeight();
 
-	    int widthScale = (maxX - minX) / 55;
-	    int heightScale = (int) ((maxY - minY) / 34);
+	    int widthScale = (maxX - minX) / 89;
+	    int heightScale = (int) ((maxY - minY) / 55 );
 	    
 	    for (int i = minY; i<maxY; i++) {
 		if(i % heightScale == 0) {
@@ -28,8 +28,8 @@ public class VisualizeImageToCharacterSet {
 			    int blue  = color.getBlue();
 			    int letter;
 			    
-			    letter = (int) Math.floor((green+red+blue)/21.);
-			    System.out.print((char)(letter + '\u0110'));
+			    letter = (int) Math.floor((red+blue)/34.);
+			    System.out.print((char)(letter + 60));
 			}
 		    }
 		    System.out.println();
