@@ -1,4 +1,19 @@
-public class VisualizeMergeSort {
+public class VisualizeInsertionSort {
+    public static void sort(int[] A) {
+	int key;
+	int i, j;
+	for(j = 1; j < A.length; j++) {
+	    key = A[j];
+	    i = j - 1;
+	    while( i >= 0 && A[i] > key ) {
+		A[i+1] = A[i];
+		i = i-1;
+		printVisualization(A);
+	    }
+	    A[i+1] = key;
+	}
+    }
+    
     public static void merge_sort(int[] A, int p, int r) {
 	int q;
 	
@@ -49,16 +64,22 @@ public class VisualizeMergeSort {
     
     public static void printBoxes(int n, int max) {
 	// will only work for 79/3 - 3 boxes
-	final String BOX      = "🌕";
-	final String BOXCROSS = "🌑";
-	final String STARDOT  = "★";
-	final String STARHOLE = "☆";
+	final String BOX        = "🌕";
+	final String BOXCROSS   = "🌑";
+	final String STARDOT    = "★";
+	final String STARHOLE   = "☆";
+	final String OPENBOX    = "☐";
+	final String CROSSBOX   = "☒";
+	final String BLACKHEART = "♥";
+	final String WHITEHEART = "♡";
+	final String BLACKHEX   = " ⬣";
+	final String WHITEHEX   = " ⎔";
 	
 	for (int i = 0; i < max; i++) {
 	    if (i+1 != n) 
-		System.out.print(STARDOT);
+		System.out.print(WHITEHEX);
 	    else
-		System.out.print(STARHOLE);
+		System.out.print(BLACKHEX);
 	}
 
 	System.out.println();
@@ -99,7 +120,8 @@ public class VisualizeMergeSort {
 	                            18, 20, 19};
 	int [] arr = CORMEN_ARR_PP_32;
 
-	merge_sort(arr, 0, arr.length-1);
+	//merge_sort(arr, 0, arr.length-1);
+	sort(arr);
     }
 }
 
