@@ -51,9 +51,9 @@ class ImageDrawingComponent extends JComponent {
 	int maxX = bImg.getWidth();
 	int maxY = bImg.getHeight();
 
-	int widthScale =  (int)((double)(maxX - minX) /233.);
-	int heightScale = (int)((double)(maxY - minY) /233.); 
-	
+	int widthScale =  1;
+	int heightScale = 1; 
+
 	for (int i = minY; i<maxY; i++) {
 	    for (int j = minX; j<maxX; j++) {
 		if (j % widthScale == 0 &&
@@ -64,19 +64,43 @@ class ImageDrawingComponent extends JComponent {
 		    int blue  = color.getBlue();
 		    int letter;
 
-		    gg.setColor(new Color((int) (0.618f*(float)red),
-					  (int) (0.618f*(float)green),
-					  blue));
-					  
-		    gg.drawRect(j, i, 1, 1);
-		    gg.fillRect(j, i, 1, 1);
+		    gg.setColor(new Color(red,
+					  144,
+					  144));
+		    gg.drawOval(j, i, 1, 1);
+		    gg.fillOval(j, i, 1, 1);
+		}
+	    }
+	}
+
+	widthScale =  (int)((double)(maxX - minX) /233.);
+	heightScale = (int)((double)(maxY - minY) /233.);
+	
+	
+	for(int i = minY; i<maxY; i++) {
+	    for (int j = minX; j<maxX; j++) {
+		if (j % widthScale == 0 &&
+		    i % heightScale == 0) {
+		    Color color = new Color(bImg.getRGB(j, i));
+		    int red   = color.getRed();
+		    int green = color.getGreen();
+		    int blue  = color.getBlue();
+		    int letter;
+
+		    if (green > 13) {
+			gg.setColor(new Color((int) (1.618*(double)red)%255,
+					      (int) (0.618*(double)green),
+					      (int) (0.618*(double)blue)));
+			gg.drawOval(j, i, red%13, red%13);
+			gg.fillOval(j, i, red%13, red%13);
+		    }
 		}
 	    }
 	}
 
 	
-	widthScale =  (int)((double)(maxX - minX) /89.);
-	heightScale = (int)((double)(maxY - minY) /89.);
+	widthScale =  (int)((double)(maxX - minX) /144.);
+	heightScale = (int)((double)(maxY - minY) /144.);
 	    
 	for (int i = minY; i<maxY; i++) {
 	    for (int j = minX; j<maxX; j++) {
@@ -88,9 +112,9 @@ class ImageDrawingComponent extends JComponent {
 		    int blue  = color.getBlue();
 		    int letter;
 
-		    gg.setColor(new Color((int) (0.236f*(float)red),
-					  green,
-					  0));
+		    gg.setColor(new Color(red,
+					  89,
+					  89));
 		    gg.drawRect(j, i, 1, 1);
 		    gg.fillRect(j, i, 1, 1);
 		
@@ -98,8 +122,8 @@ class ImageDrawingComponent extends JComponent {
 	    }
 	}
 
-	widthScale =  (int)((double)(maxX - minX) /21.);
-	heightScale = (int)((double)(maxY - minY) /21.);
+	widthScale =  (int)((double)(maxX - minX) /55.);
+	heightScale = (int)((double)(maxY - minY) /55.);
 	
 	for (int i = minY; i<maxY; i++) {
 	    for (int j = minX; j<maxX; j++) {
@@ -111,12 +135,12 @@ class ImageDrawingComponent extends JComponent {
 		    int blue  = color.getBlue();
 		    int letter;
 
-		    if (red > 128) {
-			gg.setColor(new Color((int) (0.618f *(float) red),
-					      green,
-					      (int) (0.236f *(float) blue)));
-			gg.drawRect(j, i, 1, 1);
-			gg.fillRect(j, i, 1, 1);
+		    if (red > 13) {
+			gg.setColor(new Color(red,
+					      144,
+					      144));
+			gg.drawOval(j, i, blue%8, blue%8);
+			gg.fillOval(j, i, blue%8, blue%8);
 		    }
 		}
 	    }
@@ -125,7 +149,7 @@ class ImageDrawingComponent extends JComponent {
 }
 	
 
-public class VisualizeToColorGradient {
+public class VisualizeToCirclesGradient {
     
     
     public static void main(String... args) {
