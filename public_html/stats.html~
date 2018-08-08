@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>University of Massachusetts Boston -- Cahao L. Vien</title>
+    <meta charset="UTF-8">
+    <style>
+      body {
+      background-image: url('White_Out_Red_Spectrum_Divide_Profile_Cahao.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;  /* thanks to Clement and Jorgen R
+      @ stackoverflow.com */
+      }
+      #quotes {
+      margin:  27px;
+      padding: 27px;
+      width: 377px;
+      font-family: Times, serif;
+      font-size: 21px;
+      color: #0F0903; /* thanks to GPick and their creators for the colors */
+      /* and their great innovation for color suggestions. */
+      z-index: 1;
+      }
+      #nav {
+      padding: 44px;
+      width: 233px;
+      height: auto;
+      background-color: #3F474E;
+      color: #6C7888;
+      display: block;
+      float: right;
+      position: absolute;
+      top: 0;
+      }
+      #nav ul, #nav h1 {
+      font-family: Times, serif;
+      font-size: 21px;
+      list-style-type: none; /* thanks to Paul Dixon @ stackoverflow.com */
+      }
+
+      #nav h1 {
+      font-size: 34px;
+      }
+
+      #nav a {
+      text-decoration: none;
+      color: #6C7888;
+      }
+      #sheet {
+      display: block;
+      background-color: rgba(240,237,224,.5);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      }
+    </style>
+    <script src="hao.js"></script>
+  </head>
+  <body onload="resetNav()" onResize="resetNav()">
+    <div id="sheet"></div>
+    <div id="main">
+      <h1>Profile</h1>
+
+      <ul>
+	<li>Age: 32</li>
+        <li>Books: The Tao of Physics, Symmetry, The Design of Everyday Things, Chinese Gung Fu, Structure and Interpretation of Computer Languages, A Sand County's Almanac, Essential Symbolic Logic</li>
+        <li>Blood Type: O+</li>
+        <li>Sign: Aries</li>
+        <li>Chinese Sign: Fire Tiger</li>
+        <li>Interests: Classical Guitar, Programming Languages, Math, Natural Language Processing, Reading, Machine Learning, A/I, Groovy, Octave, Bates Method of Seeing without Glasses, A Mind for Numbers</li>
+        <li>Hobbies: Classical Guitar, Programming, Studying, Reading, Long Walks, Bicycling, Computational Art, Graphic Design</li>
+      </ul>
+    </div>
+    <div id="nav">
+      <nav>
+	<h1>Cahao L. Vien</h1>
+	<ul>
+	  <li><a href="index.html#quotes">Quotes</li>
+	  <li><a href="stats.html#main">Profile</li>
+	  <li><a href="https://www.github.com/cahaovien001">Github</li>
+	  <li><a href="https://www.linkedin.com/in/cahao-vien-90062956">LinkedIn</li>
+	</ul>
+      </nav>
+    </div>
+    
+  </body>
+</html>
